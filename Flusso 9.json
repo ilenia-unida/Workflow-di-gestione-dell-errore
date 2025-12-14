@@ -1,0 +1,106 @@
+{
+  "name": "Flusso 9",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "91ad2b9c-cb1c-4ea1-8df1-95724da323d6",
+      "name": "Error Trigger",
+      "type": "n8n-nodes-base.errorTrigger",
+      "typeVersion": 1,
+      "position": [
+        128,
+        576
+      ]
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "channel": "C09FHT98TB4",
+        "text": "🚨 Errore nel workflow ",
+        "otherOptions": {},
+        "attachments": []
+      },
+      "id": "81f2359b-ea05-4087-9889-50d566d208e4",
+      "name": "Slack - Notifica errore",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 1,
+      "position": [
+        448,
+        576
+      ],
+      "credentials": {
+        "slackOAuth2Api": {
+          "id": "MwfqAFePwrCxeXtY",
+          "name": "Slack account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "N.B.Passaggi per far funzionare Error Trigger\n\nVai nel workflow che vuoi monitorare (quello che può fallire).\n\nApri le Impostazioni del workflow (rotellina in alto a destra).\n\nAttiva l’opzione:\n\n“Error Workflow” (o “Workflow di errore” se hai la UI in italiano).\n\nQui selezioni il workflow che contiene il nodo Error Trigger.\n\nSalva le modifiche.",
+        "height": 256,
+        "width": 512,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -528,
+        304
+      ],
+      "typeVersion": 1,
+      "id": "67dc97a5-381f-4e7a-8418-8c4bfcf5490f",
+      "name": "Sticky Note22"
+    },
+    {
+      "parameters": {
+        "content": "Si attiva quando c'è un errore in un workflow collegato (vedi N.B)"
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        48,
+        368
+      ],
+      "typeVersion": 1,
+      "id": "283bbbfc-3398-4a9d-8aad-e888dcabc6f0",
+      "name": "Sticky Note24"
+    },
+    {
+      "parameters": {
+        "content": "Quando c'è un errore in un workflow collegato viene inviata una notifica sul canlae slack collegato. Serve l'id del canale slack in cui  deve comparire la notifica  "
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        368,
+        368
+      ],
+      "typeVersion": 1,
+      "id": "f047a1ff-ddee-4a36-b883-355280255cc1",
+      "name": "Sticky Note25"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Error Trigger": {
+      "main": [
+        [
+          {
+            "node": "Slack - Notifica errore",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "72402c18-e0e8-49a2-906c-1af26f6edf49",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "3eade08974c65ea0e714de990b1c4d4deb3f525e0d19f574aa90538cacfd42e4"
+  },
+  "id": "7rvwTRf6tG6eojdi",
+  "tags": []
+}
